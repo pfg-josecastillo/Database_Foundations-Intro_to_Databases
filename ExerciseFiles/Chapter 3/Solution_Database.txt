@@ -1,0 +1,21 @@
+# Create the server container
+Windows PC:
+docker run --name kineteco -e "ACCEPT_EULA=Y" -e "SA_PASSWORD=Adam123456" -p 1411:1433 -d mcr.microsoft.com/mssql/server:2019-latest
+
+MacOS & Linux:
+docker run --name kineteco -e 'ACCEPT_EULA=Y' -e 'SA_PASSWORD=Adam123456' -p 1411:1433 -d mcr.microsoft.com/mssql/server:2019-latest
+
+
+# Connect in Azure Data Studio with the following settings
+Connection type: Microsoft SQL Server
+Server name: localhost
+User name: SA
+Password: Adam123456
+Remember passowrd: checked
+Server group: SQL Server
+Name: KinetEco
+Advanced - Port: 1411
+
+
+# Create the database in a new query window
+CREATE DATABASE KinetEco;

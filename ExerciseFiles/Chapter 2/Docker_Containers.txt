@@ -1,0 +1,41 @@
+############################
+### Microsoft SQL Server ###
+
+https://hub.docker.com/_/microsoft-mssql-server
+
+Windows PC:
+docker run --name sqlserver2019 -e "ACCEPT_EULA=Y" -e "SA_PASSWORD=Adam123456" -p 1401:1433 -d mcr.microsoft.com/mssql/server:2019-latest
+
+MacOS & Linux:
+docker run --name sqlserver2019 -e 'ACCEPT_EULA=Y' -e 'SA_PASSWORD=Adam123456' -p 1401:1433 -d mcr.microsoft.com/mssql/server:2019-latest
+
+
+
+
+##################
+### PostgreSQL ###
+
+https://hub.docker.com/_/postgres/
+
+docker run --name postgresql -p 5401:5432 -e POSTGRES_PASSWORD=Adam123456 -d postgres:latest
+
+
+
+
+#######################
+### Docker Commands ###
+
+# view all running containers
+docker ps
+
+# view all containers regardless of status
+docker ps -a
+
+# stop a container
+docker stop sqlserver2019
+
+# start a container
+docker start sqlserver2019
+
+# remove a container
+docker rm sqlserver2019
